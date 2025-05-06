@@ -1,0 +1,29 @@
+name: Generate Index
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  generate-index:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Generate index
+      run: |
+        python -c "import os, json, urllib.parse; file_list = []; base_url = 'https://github.com/IMPERIONF/athena-memory/blob/main'; for root, _, files in os.walk('.'): [file_list.append({'filename': f, 'relative_path': os.path.relpath(os.path.join(root, f), '.'), 'github_url': f'{base_url}/{urllib.parse.quote(os.path.relpath(os.path.join(root, f), '.').replace(\"\\\\\", \"/\"))}'}) for f in files if f.endswith('.md')]; json.dump(file_list, open('athena_memory_index.json', 'w', encoding='utf-8'), indent=4)"
+
+    - name: Commit and push index
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add athena_memory_index.json
+        git commit -m "Mise à jour automatique de l'index des fichiers Markdown" || echo "Aucun changement à committer"
+        git push
