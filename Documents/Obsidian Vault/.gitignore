@@ -1,1 +1,23 @@
-.obsidian/ 
+# Ignorer les dossiers système et fichiers hors du vault
+../*
+../../*
+
+# Ignorer le dossier de configuration Obsidian
+.obsidian/
+
+# Garder les fichiers de ton vault
+!remote-blog-athena/
+!2025-05-05.md
+!Athéna.md
+!Charisme humour énergie.md
+!DonneesBoursieres.md
+!Notre scanner Exel.md
+!SYSTEM FINAL GITHUB A CONNECTER/
+!Sans titre.canvas
+!Sans titre.md
+!System de puissance Athena/
+!Trading Station/
+!nos source API boursière trading.md
+!sync_and_index.bat
+!generate_index.py
+!update_and_push.bat
