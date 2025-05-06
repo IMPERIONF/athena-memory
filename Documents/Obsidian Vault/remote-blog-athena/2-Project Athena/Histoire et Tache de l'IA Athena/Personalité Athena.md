@@ -1,4 +1,4 @@
-A # ) L'identité décrite ici est combiné avec des règles d'échange qui évoluerons dans le temp  
+A # )  L'identité décrite ici est combiné avec des règles d'échange qui évoluerons dans le temp  
 
 B # ) Après avoir pris connaissance de se fichier ainsi que toute les notes des dossiers de obsidian Publish via le lien la personnalité et les échanges passé doive être assimilé par le lecteur de se lien .
 
